@@ -1,0 +1,65 @@
+=====================================================================
+  À CORPS sur ANDROID  —  deux façons
+=====================================================================
+
+IMPORTANT (micro) : sur Android, le micro n'est autorisé qu'en
+contexte sécurisé. Une page ouverte en local "fichier://" ne peut
+PAS utiliser le micro. D'où les 2 options ci-dessous.
+
+
+---------------------------------------------------------------------
+OPTION A — APK local (RECOMMANDÉE pour un usage 100% hors-ligne)
+---------------------------------------------------------------------
+Une vraie appli installée, micro géré par la permission Android,
+aucune connexion ni hébergement. Dossier : APK-WebView/
+
+Étapes (une seule fois) :
+1. Installer Android Studio (gratuit) sur un PC.
+2. Android Studio → New Project → "Empty Views Activity" (Java).
+   - Name : À Corps
+   - Package name : com.acorps.app   (IMPORTANT : exactement ça)
+   - Language : Java
+3. Remplacer / ajouter ces fichiers depuis le dossier APK-WebView :
+   - app/src/main/java/com/acorps/app/MainActivity.java   (remplacer)
+   - app/src/main/assets/A-Corps.html
+       (créer le dossier "assets" : clic droit sur app/src/main →
+        New → Directory → "assets", puis y copier A-Corps.html)
+   - Recopier les icônes des dossiers res/mipmap-* (facultatif mais
+     joli) par-dessus celles du projet.
+4. Ouvrir app/src/main/AndroidManifest.xml du projet et y ajouter,
+   juste avant <application>, les 2 lignes :
+       <uses-permission android:name="android.permission.RECORD_AUDIO" />
+       <uses-feature android:name="android.hardware.microphone" android:required="false" />
+   (Le fichier AndroidManifest.xml fourni ici sert de modèle.)
+5. Menu Build → Build App Bundle(s) / APK(s) → Build APK(s).
+   Android Studio indique où est le fichier "app-debug.apk".
+6. Copier cet .apk sur le téléphone et l'installer (autoriser les
+   "sources inconnues" si demandé). Au 1er lancement, accepter le micro.
+
+→ Résultat : appli "À Corps" sur le téléphone, hors-ligne, micro OK.
+
+
+---------------------------------------------------------------------
+OPTION B — PWA "Ajouter à l'écran d'accueil"
+---------------------------------------------------------------------
+Plus simple, mais le micro NÉCESSITE une adresse HTTPS (donc un
+petit hébergement). Dossier : PWA/
+
+Si tu héberges le dossier PWA/ sur une URL HTTPS (ex : GitHub Pages,
+Netlify — gratuits) :
+1. Ouvrir l'URL dans Chrome sur Android.
+2. Menu ⋮ → "Ajouter à l'écran d'accueil".
+3. L'icône À Corps apparaît ; l'appli s'ouvre en plein écran,
+   fonctionne hors-ligne (après 1ère visite) et le micro marche.
+
+Sans hébergement HTTPS, la PWA s'installe mais le micro reste bloqué
+par Android → préfère alors l'Option A (APK).
+
+Contenu PWA/ : index.html, manifest.webmanifest, sw.js, icônes.
+Tu peux aussi déposer ce dossier sur PWABuilder.com pour générer
+automatiquement un .apk/.aab depuis l'URL hébergée.
+
+
+---------------------------------------------------------------------
+Astuce : les deux options embarquent EXACTEMENT la même app À Corps V2
+(accordeur multi-instruments + accords avec vue piano/manche).

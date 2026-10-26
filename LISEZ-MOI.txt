@@ -1,0 +1,43 @@
+========================================================
+  A CORPS  -  Accordeur chromatique & specialiste du solfege
+========================================================
+
+Vous avez 3 facons de lancer l'application. Le micro ne
+fonctionne QUE via un lanceur (localhost) : un simple
+double-clic sur le .html ne suffit pas pour le micro.
+
+--------------------------------------------------------
+OPTION 1 - Obtenir un vrai .exe (recommande)
+--------------------------------------------------------
+1. Double-cliquez sur  "Construire-A-Corps-exe.bat"
+   (il compile l'application avec le .NET deja present
+    dans Windows - aucune installation, aucun internet)
+2. Un fichier  "A-Corps.exe"  apparait dans le dossier.
+3. Double-cliquez sur  A-Corps.exe  pour utiliser l'appli.
+   -> A-Corps.exe est autonome : vous pouvez le copier,
+      le mettre sur le Bureau, l'envoyer, etc.
+
+--------------------------------------------------------
+OPTION 2 - Lancer sans rien compiler
+--------------------------------------------------------
+Double-cliquez sur  "Lancer-A-Corps.bat"
+(gardez le fichier  A-Corps.html  dans le meme dossier).
+
+--------------------------------------------------------
+OPTION 3 - Navigateur seul (SANS micro)
+--------------------------------------------------------
+Double-cliquez sur  A-Corps.html  : la decomposition
+d'accords par saisie fonctionne, mais pas le micro.
+
+--------------------------------------------------------
+Notes
+--------------------------------------------------------
+- Une petite fenetre noire reste ouverte : c'est le
+  moteur de l'appli. Laissez-la ouverte, fermez-la pour
+  quitter.
+- Au 1er lancement, Windows ou le navigateur peut
+  demander l'autorisation du microphone : acceptez.
+- Si SmartScreen s'affiche pour le .exe : "Informations
+  complementaires" puis "Executer quand meme" (c'est
+  normal pour un .exe non signe que vous avez cree).
+- 100% hors-ligne. Aucune donnee n'est envoyee.

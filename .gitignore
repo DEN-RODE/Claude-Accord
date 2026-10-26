@@ -1,0 +1,3 @@
+*.exe
+Android/APK-WebView/app/build/
+Android/APK-WebView/.gradle/
