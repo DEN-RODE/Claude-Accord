@@ -73,6 +73,16 @@ Tout est en vanilla JS, organisé en blocs `<script>` :
   référence (A4=440, E2=82.41, etc.) ; décompositions d'accords validées (C, Am, G7,
   Cmaj7, Dm7, Bm7b5, Fdim, Eaug, Cadd9). Re-tester après toute modif de la théorie.
 
+## Règle de travail : tenir le repo GitHub à jour (demande de Mathieu)
+Repo : https://github.com/DEN-RODE/Claude-Accord (branche `main`).
+À **chaque** modification du projet, sans attendre qu'on le redemande :
+1. Resynchroniser les copies Android de `A-Corps.html` (APK identique ; PWA = identique + balises manifest/SW).
+2. Mettre à jour `README.md` si les fonctionnalités, instruments, accords ou modes de lancement changent.
+3. Ajouter une entrée datée dans `CHANGELOG.md`.
+4. Mettre à jour ce `CLAUDE.md` si l'architecture ou une décision change.
+5. Commit avec un message clair en français, puis push sur `main`.
+Pitch du projet : « appli pour accorder les instruments à cordes », avec module solfège (décomposition d'accords).
+
 ## Pistes d'évolution demandées / possibles
 - Générateur de sons de référence (jouer chaque corde).
 - Mode tablature / diagrammes d'accords guitare.
